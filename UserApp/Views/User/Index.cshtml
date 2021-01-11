@@ -1,0 +1,30 @@
+﻿@model List<UserViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"><h3>Sıra No</h3></div>
+        <div class="col-md-2"><h3>Adı</h3></div>
+        <div class="col-md-2"><h3>Soyadı</h3></div>
+        <div class="col-md-2"><h3>Doğum Tarihi</h3></div>
+        <div class="col-md-3"><h3>GitHub Hesabı</h3></div>
+        <div class="col-md-2"><a class="btn btn-primary" href="User/Add">Yeni kullanıcı</a></div>
+    </div>
+    <br />
+    @foreach (var user in Model)
+    {
+        <div class="row">
+            <div class="col-md-1"><p>@user.Id</p></div>
+            <div class="col-md-2"><p>@user.Name</p></div>
+            <div class="col-md-2"><p>@user.Surname</p></div>
+            <div class="col-md-2"><p>@user.BirthDate</p></div>
+            <div class="col-md-3"><p>@user.GitHubAccountUrl</p></div>
+            <div class="col-md-1"><a class="btn btn-info" href="User/GetUser?id=@user.Id">Detay</a></div>
+            <div class="col-md-1"><a class="btn btn-info" href="User/Edit?id=@user.Id">Düzenle</a></div>
+        </div>
+        <br />
+    }
+</div>

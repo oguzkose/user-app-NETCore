@@ -1,0 +1,54 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add</h1>
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <div class=" container">
+        <div class="row">
+            @Html.LabelFor(x => x.Id, null, new { @class = "col-md-2" })
+            @Html.TextBoxFor(x => x.Id, null, new { @class = "col-md-3", type = "number" })
+            @Html.ValidationMessageFor(x => x.Id, null, new { @class = "col-md-3 text-danger" })
+        </div>
+        <br />
+        <div class="row">
+            @Html.LabelFor(x => x.Name, null, new { @class = "col-md-2" })
+            @Html.TextBoxFor(x => x.Name, null, new { @class = "col-md-3" })
+            @Html.ValidationMessageFor(x => x.Name, null, new { @class = "col-md-3 text-danger" })
+        </div>
+        <br />
+        <div class="row">
+            @Html.LabelFor(x => x.Surname, null, new { @class = "col-md-2" })
+            @Html.TextBoxFor(x => x.Surname, null, new { @class = "col-md-3" })
+            @Html.ValidationMessageFor(x => x.Surname, null, new { @class = "col-md-3 text-danger" })
+        </div>
+        <br />
+        <div class="row">
+            @Html.LabelFor(x => x.BirthDate, null, new { @class = "col-md-2" })
+            @Html.TextBoxFor(x => x.BirthDate, null, new { @class = "col-md-3 ", type = "date" })
+            @Html.ValidationMessageFor(x => x.BirthDate, null, new { @class = "col-md-3 text-danger" })
+        </div>
+        <br />
+        <div class="row">
+            @Html.LabelFor(x => x.Email, null, new { @class = "col-md-2" })
+            @Html.TextBoxFor(x => x.Email, null, new { @class = "col-md-3" })
+            @Html.ValidationMessageFor(x => x.Email, null, new { @class = "col-md-3 text-danger" })
+        </div>
+        <br />
+        <div class="row">
+            @Html.LabelFor(x => x.Gender, null, new { @class = "col-md-2" })
+            @Html.DropDownListFor(x => x.Gender, (SelectListItem[])ViewBag.GenderList, new { @class = "col-md-3" })
+            @Html.ValidationMessageFor(x => x.Gender, null, new { @class = "col-md-3 text-danger" })
+        </div>
+        <br />
+        <div class="row">
+            @Html.LabelFor(x => x.GitHubAccountUrl, null, new { @class = "col-md-2" })
+            @Html.TextBoxFor(x => x.GitHubAccountUrl, null, new { @class = "col-md-3" })
+            @Html.ValidationMessageFor(x => x.GitHubAccountUrl, null, new { @class = "col-md-3 text-danger" })
+        </div>
+        <br />
+        <div><button class="btn btn-primary" type="submit">Ekle</button></div>
+    </div>
+}
